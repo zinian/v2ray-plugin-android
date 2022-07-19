@@ -15,6 +15,10 @@ jobs:
           key: jars-{{ checksum "build.gradle.kts" }}
       - restore_cache:
           key: go-{{ checksum "app/src/main/go/v2ray-plugin/go.sum" }}
+          
+      - run:
+          name: chmod
+          command: chmod +x ./app/go-build.bash
       - run:
           name: Run Build and Tests
           command: ./app/go-build.bash
