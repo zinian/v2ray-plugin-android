@@ -17,7 +17,7 @@ jobs:
           key: go-{{ checksum "app/src/main/go/v2ray-plugin/go.sum" }}
       - run:
           name: Run Build and Tests
-          command: ./v2ray-plugin-android/app/go-build.bash
+          command: ./app/go-build.bash
       - save_cache:
           paths:
           - ~/go
